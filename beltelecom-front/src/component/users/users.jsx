@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Error from "../Error/error";
-import "./second.css"
-import Vk from "../../img/vk.png"
-import Facebook from "../../img/facebook.png"
-import Instagram from "../../img/instagram.png"
-import Twitter from "../../img/twitter.png" 
+import "./second.css";
+import Vk from "../../img/vk.png";
+import Facebook from "../../img/facebook.png";
+import Instagram from "../../img/instagram.png";
+import Twitter from "../../img/twitter.png"; 
 
 const Users = () => {
 
@@ -15,7 +15,7 @@ const Users = () => {
 
     const getUsers = async () => {
         try {
-            const response = await axios.get('http://10.247.16.47:3000/Users.json');
+            const response = await axios.get('http://localhost:3000/Users.json');
             // http://localhost:3000/Users.json   localhost:8080/users
             setUser(response.data.users);
             setError(null);
@@ -51,13 +51,54 @@ const Users = () => {
                                     </div>
                                 ))}
                             </div>
-
                         </div>
                 ))}
-            
                     </div>
                 </div>
             )}
+
+            <div className="text">
+                <p>
+                <span style={{
+                    fontSize: 30,
+                    fontWeight: 600
+                }}>Пресс-центр</span><br/><br/>
+
+Представители средств массовой информации могут обратиться в группу по связям с общественностью, чтобы получить информацию о деятельности, услугах компании, а также по другим вопросам, относящимся к компетенции РУП «Белтелеком». Специалисты группы подготовят комментарий, справочную информацию, помогут организовать интервью, видеосъемку и т. д.
+Для получения информации необходимо направить запрос с указанием темы публикации или видеосюжета (при необходимости – с предварительным списком вопросов), контактных данных журналиста, а также желаемой даты получения ответа или проведения съемки. Для организации видеосъемки указывается состав съемочной группы.
+Для оперативной работы просим направлять запрос на е-mail: ekaterinamd@main.beltelecom.by <br/><br/>
+
+                    <span style={{
+                    fontSize: 20,
+                    fontWeight: 600
+                }}>Фирменный стиль</span><br/>
+Логотип и знак «Белтелеком» – основа фирменного стиля.<br/>
+Логотип, знак и фирменный блок имеют установленные размеры и пропорции.<br/><br/>
+                </p>
+
+
+                <p>
+                <span style={{
+                    fontSize: 30,
+                    fontWeight: 600
+                }}>Контакты</span><br/><br/>
+
+Получить ответы на интересующие Вас вопросы по услугам нашей компании можно по телефону 123 – единый центр обслуживания клиентов. Номер телефона действует по всей территории Республики Беларусь. Звонки бесплатные.<br/><br/>
+
+<span style={{
+                    fontSize: 20,
+                    fontWeight: 600
+                }}>Контакты для деловых партнеров</span><br/><br/>
+
+Республиканское унитарное предприятие электросвязи "Белтелеком"<br/>
+Адрес: ул. Энгельса, 6, 220030, г. Минск, Республика Беларусь<br/>
+
+тел.: +375 17 2171005 (приемная генерального директора)<br/>
+факс: +375 17 3274422
+                </p>
+
+            </div>
+
         </div>
     );
 }

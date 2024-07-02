@@ -14,6 +14,7 @@
 }
 
 .container__second{
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -74,4 +75,9 @@
     height: 130px;
     margin-top: 10px;
     text-align: center;
+}
+
+.text{
+    width: 90%;
+    margin-bottom: 30px;
 }
