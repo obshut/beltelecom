@@ -24,9 +24,9 @@ public class AppController {
     private final RestTemplate restTemplate = new RestTemplate();
 
     @PostMapping("/filials")
-    public ResponseEntity<List<Filial>> getFilials() {
+    public ResponseEntity<Filial> postFilial() {
         String url = getServiceUrl("MICROSERVICES") + "/filials";
-        ResponseEntity<List> response = restTemplate.postForEntity(url, new Filial(), List.class);
+        ResponseEntity<Filial> response = restTemplate.postForEntity(url, new Filial(), Filial.class);
         return ResponseEntity.ok(response.getBody());
     }
 
@@ -38,9 +38,9 @@ public class AppController {
     }
 
     @PostMapping("/tariffs")
-    public ResponseEntity<List<Tariff>> getTariffs() {
+    public ResponseEntity<List<Tariff>> postTariff() {
         String url = getServiceUrl("MICROSERVICES") + "/tariffs";
-        ResponseEntity<List> response = restTemplate.postForEntity(url, new Tariff(), List.class);
+        ResponseEntity<Tariff> response = restTemplate.postForEntity(url, new Tariff(), Tariff.class);
         return ResponseEntity.ok(response.getBody());
     }
 
@@ -52,9 +52,9 @@ public class AppController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<List<User>> getUsers() {
+    public ResponseEntity<List<User>> postUser() {
         String url = getServiceUrl("MICROSERVICES") + "/users";
-        ResponseEntity<List> response = restTemplate.postForEntity(url, new User(), List.class);
+        ResponseEntity<User> response = restTemplate.postForEntity(url, new User(), User.class);
         return ResponseEntity.ok(response.getBody());
     }
 
