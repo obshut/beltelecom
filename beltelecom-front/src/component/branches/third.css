@@ -1,0 +1,53 @@
+.container__third__all{
+    width: 90%;
+    margin: 0 auto;
+    background-color: #ebebeb;
+    padding-bottom: 30px;
+}
+
+.table__oblasti{
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 90%;
+}
+
+.oblasti td{
+    width: 14.2857143%;
+    height: 50px;
+    text-align: center;
+}
+
+.oblasti td:hover{
+    cursor: pointer;
+    background-color: deepskyblue;
+}
+
+.table__vivod{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+
+.table__vivod thead tr{
+    font-size: 20px;
+}
+
+.table__vivod tbody tr td{
+    padding: 10px 0;
+    width: 20%;
+}
+
+.table__vivod tbody tr:hover{
+    background-color: deepskyblue;
+}
+
+.button__branches{
+    margin-top: 20px;
+}
+
+tr td, tr th {
+    border: 1px solid #000; 
+  }

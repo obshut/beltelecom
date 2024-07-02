@@ -1,0 +1,67 @@
+{
+    "filiali":[
+        {
+            "id": 1,
+            "name": "Service1",
+            "address": "ул.Пушкина д.Колотушкина кв.2",
+            "phone": "+375291234567",
+            "work": "7:00-19:00",
+            "rating": "3",
+            "location": "loc1" 
+        },
+        {
+            "id": 2,
+            "name": "Service2",
+            "address": "ул.Пушкина д.Колотушкина кв.2",
+            "phone": "+375291234567",
+            "work": "7:00-19:00",
+            "rating": "4.5",
+            "location": "loc2"
+        },
+        {
+            "id": 3,
+            "name": "Service3",
+            "address": "ул.Пушкина д.Колотушкина кв.2",
+            "phone": "+375291234567",
+            "work": "7:00-19:00",
+            "rating": "1.9",
+            "location": "loc3"
+        },
+        {
+            "id": 4,
+            "name": "Service4",
+            "address": "ул.Пушкина д.Колотушкина кв.2",
+            "phone": "+375291234567",
+            "work": "7:00-19:00",
+            "rating": "2.3",
+            "location": "loc4"
+        },
+        {
+            "id": 5,
+            "name": "Service5",
+            "address": "ул.Пушкина д.Колотушкина кв.2",
+            "phone": "+375291234567",
+            "work": "7:00-19:00",
+            "rating": "3",
+            "location": "loc5"
+        },
+        {
+            "id": 6,
+            "name": "Service6",
+            "address": "ул.Пушкина д.Колотушкина кв.2",
+            "phone": "+375291234567",
+            "work": "7:00-19:00",
+            "rating": "5",
+            "location": "loc6" 
+        },
+        {
+            "id": 7,
+            "name": "Service7",
+            "address": "ул.Пушкина д.Колотушкина кв.2",
+            "phone": "+375291234567",
+            "work": "7:00-19:00",
+            "rating": "0",
+            "location": "loc7"
+        }
+    ]
+} 

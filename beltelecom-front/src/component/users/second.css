@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container__second__all{
+    background-color: #ebebeb;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container__second{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.button__user{
+    margin-top: 20px;
+}
+
+.User{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.User__card{
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(142,142,237,1) 36%, rgba(89,120,221,1) 59%, rgba(0,99,255,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Photo__User{
+    width: 80%;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.Name{
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.Info{
+    margin-top: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+.Social{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+}

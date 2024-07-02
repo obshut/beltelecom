@@ -1,0 +1,30 @@
+{
+    "users":[
+        {
+            "id": "1",
+            "photo": "../../img/user.png",
+            "name": "Test1",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex laudantium, ducimus ipsa aliquam, tempore consectetur voluptatem maiores nihil distinctio culpa pariatur maxime dolorem magni hic sapiente quae sunt placeat eum?",
+            "networks": 
+            [
+                {
+                    "network": "Twitter",
+                    "url": "url20"
+                }
+            ]  
+        },
+        {
+            "id": "2",
+            "photo": "photo",
+            "name": "Test2",
+            "description": "Lorem ipsum dolor sit amet.",
+            "networks": 
+            [
+                {
+                    "network": "Twitter",
+                    "url": "url20"
+                }
+            ]
+        }
+    ]
+}
