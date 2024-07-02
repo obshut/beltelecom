@@ -19,7 +19,7 @@ public class UserController {
 
     @PostMapping
     @ResponseBody
-    public User postUser(@RequestBody User user) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    public ResponseEntity<User> postUser(@RequestBody User user) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         /*
         Input for networks must be like:
         "networks": [
@@ -37,7 +37,7 @@ public class UserController {
 
          */
 
-        return DataBase.persistObject(user);
+        return ResponseEntity.ok(DataBase.persistObject(user));
     }
 
     @PostMapping(value = "/find")
