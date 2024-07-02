@@ -36,12 +36,16 @@ public class UserController {
         ]
 
          */
+        System.out.println(user.getId());
+        System.out.println(user.getDescription());
+        System.out.println(user.getName());
+        System.out.println(user.getPhoto());
+        System.out.println(user.getNetworks());
         if(user.getNetworks() == null)
             System.out.println("Networks is null when get from JSON!!!");
         User us = DataBase.persistObject(user);
         if(us.getNetworks() == null)
             System.out.println("Networks is null after persistobject!!!");
-
         return ResponseEntity.ok(us);
     }
 
