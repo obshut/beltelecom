@@ -3,15 +3,12 @@ package net.btc.microservices;
 import jakarta.persistence.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.Collections;
 
 @SpringBootApplication
 @RestController
-@EnableDiscoveryClient
 public class MicroServicesApplication {
 
     public static final int PORT = 8080;
