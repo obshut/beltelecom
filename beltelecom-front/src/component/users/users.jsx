@@ -15,7 +15,7 @@ const Users = () => {
 
     const getUsers = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/Us2ers.json');
+            const response = await axios.get('http://10.247.16.47:3000/Users.json');
             // http://localhost:3000/Users.json   localhost:8080/users
             setUser(response.data.users);
             setError(null);
