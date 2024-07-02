@@ -24,44 +24,44 @@ public class AppController {
     private final RestTemplate restTemplate = new RestTemplate();
 
     @PostMapping("/filials")
-    public ResponseEntity<Filial> postFilial() {
+    public ResponseEntity<Filial> postFilial(@RequestBody Filial filial) {
         String url = getServiceUrl("MICROSERVICES") + "/filials";
-        ResponseEntity<Filial> response = restTemplate.postForEntity(url, new Filial(), Filial.class);
+        ResponseEntity<Filial> response = restTemplate.postForEntity(url, filial, Filial.class);
         return ResponseEntity.ok(response.getBody());
     }
 
     @PostMapping("/filials/find")
-    public ResponseEntity<List<Filial>> getFilials() {
+    public ResponseEntity<List<Filial>> getFilials(@RequestBody Filial filial) {
         String url = getServiceUrl("MICROSERVICES") + "/filials/find";
-        ResponseEntity<List> response = restTemplate.postForEntity(url, new Filial(), List.class);
+        ResponseEntity<List> response = restTemplate.postForEntity(url, filial, List.class);
         return ResponseEntity.ok(response.getBody());
     }
 
     @PostMapping("/tariffs")
-    public ResponseEntity<Tariff> postTariff() {
+    public ResponseEntity<Tariff> postTariff(@RequestBody Tariff tariff) {
         String url = getServiceUrl("MICROSERVICES") + "/tariffs";
-        ResponseEntity<Tariff> response = restTemplate.postForEntity(url, new Tariff(), Tariff.class);
+        ResponseEntity<Tariff> response = restTemplate.postForEntity(url, tariff, Tariff.class);
         return ResponseEntity.ok(response.getBody());
     }
 
     @PostMapping("/tariffs/find")
-    public ResponseEntity<List<Tariff>> getTariffs() {
+    public ResponseEntity<List<Tariff>> getTariffs(@RequestBody Tariff tariff) {
         String url = getServiceUrl("MICROSERVICES") + "/tariffs/find";
-        ResponseEntity<List> response = restTemplate.postForEntity(url, new Tariff(), List.class);
+        ResponseEntity<List> response = restTemplate.postForEntity(url, tariff, List.class);
         return ResponseEntity.ok(response.getBody());
     }
 
     @PostMapping("/users")
-    public ResponseEntity<User> postUser() {
+    public ResponseEntity<User> postUser(@RequestBody User user) {
         String url = getServiceUrl("MICROSERVICES") + "/users";
-        ResponseEntity<User> response = restTemplate.postForEntity(url, new User(), User.class);
+        ResponseEntity<User> response = restTemplate.postForEntity(url, user, User.class);
         return ResponseEntity.ok(response.getBody());
     }
 
     @PostMapping("/users/find")
-    public ResponseEntity<List<User>> getUsers() {
+    public ResponseEntity<List<User>> getUsers(@RequestBody User user) {
         String url = getServiceUrl("MICROSERVICES") + "/users/find";
-        ResponseEntity<List> response = restTemplate.postForEntity(url, new User(), List.class);
+        ResponseEntity<List> response = restTemplate.postForEntity(url, user, List.class);
         return ResponseEntity.ok(response.getBody());
     }
 
