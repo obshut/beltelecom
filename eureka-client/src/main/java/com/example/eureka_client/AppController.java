@@ -23,21 +23,42 @@ public class AppController {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    @GetMapping("/filials")
+    @PostMapping("/filials")
+    public ResponseEntity<List<Filial>> getFilials() {
+        String url = getServiceUrl("MICROSERVICES") + "/filials";
+        ResponseEntity<List> response = restTemplate.postForEntity(url, new Filial(), List.class);
+        return ResponseEntity.ok(response.getBody());
+    }
+
+    @PostMapping("/filials/find")
     public ResponseEntity<List<Filial>> getFilials() {
         String url = getServiceUrl("MICROSERVICES") + "/filials/find";
         ResponseEntity<List> response = restTemplate.postForEntity(url, new Filial(), List.class);
         return ResponseEntity.ok(response.getBody());
     }
 
-    @GetMapping("/tariffs")
+    @PostMapping("/tariffs")
+    public ResponseEntity<List<Tariff>> getTariffs() {
+        String url = getServiceUrl("MICROSERVICES") + "/tariffs";
+        ResponseEntity<List> response = restTemplate.postForEntity(url, new Tariff(), List.class);
+        return ResponseEntity.ok(response.getBody());
+    }
+
+    @PostMapping("/tariffs/find")
     public ResponseEntity<List<Tariff>> getTariffs() {
         String url = getServiceUrl("MICROSERVICES") + "/tariffs/find";
         ResponseEntity<List> response = restTemplate.postForEntity(url, new Tariff(), List.class);
         return ResponseEntity.ok(response.getBody());
     }
 
-    @GetMapping("/users")
+    @PostMapping("/users")
+    public ResponseEntity<List<User>> getUsers() {
+        String url = getServiceUrl("MICROSERVICES") + "/users";
+        ResponseEntity<List> response = restTemplate.postForEntity(url, new User(), List.class);
+        return ResponseEntity.ok(response.getBody());
+    }
+
+    @PostMapping("/users/find")
     public ResponseEntity<List<User>> getUsers() {
         String url = getServiceUrl("MICROSERVICES") + "/users/find";
         ResponseEntity<List> response = restTemplate.postForEntity(url, new User(), List.class);
