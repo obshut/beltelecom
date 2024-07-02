@@ -14,7 +14,7 @@ const Branches = () => {
 
     const getService = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/Bran.json');
+            const response = await axios.get('http://10.247.16.47:3000/Bran.json');
             //  http://localhost:3000/Bran.json   localhost:8080/filials
             setFiliali(response.data.filiali);
             setFilteredFiliali(response.data.filiali);

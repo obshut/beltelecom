@@ -11,7 +11,7 @@ const Rates = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/Ex.json');
+            const response = await axios.get('http://10.247.16.47:3000/Ex.json');
             // localhost:8080/tariffs    http://localhost:3000/Ex.json
             setRates(response.data.rates);
             setError(null);
