@@ -38,7 +38,7 @@ public class AppController {
     }
 
     @PostMapping("/tariffs")
-    public ResponseEntity<List<Tariff>> postTariff() {
+    public ResponseEntity<Tariff> postTariff() {
         String url = getServiceUrl("MICROSERVICES") + "/tariffs";
         ResponseEntity<Tariff> response = restTemplate.postForEntity(url, new Tariff(), Tariff.class);
         return ResponseEntity.ok(response.getBody());
@@ -52,7 +52,7 @@ public class AppController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<List<User>> postUser() {
+    public ResponseEntity<User> postUser() {
         String url = getServiceUrl("MICROSERVICES") + "/users";
         ResponseEntity<User> response = restTemplate.postForEntity(url, new User(), User.class);
         return ResponseEntity.ok(response.getBody());
