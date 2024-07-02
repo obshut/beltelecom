@@ -41,6 +41,7 @@ public class UserController {
         User us = DataBase.persistObject(user);
         if(us.getNetworks() == null)
             System.out.println("Networks is null after persistobject!!!");
+
         return ResponseEntity.ok(us);
     }
 
