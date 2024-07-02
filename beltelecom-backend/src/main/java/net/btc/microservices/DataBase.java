@@ -115,6 +115,9 @@ public class DataBase {
         Class<?> clazz = object.getClass();
         Constructor<?> constructor = clazz.getDeclaredConstructor(clazz);
         T instance = (T) constructor.newInstance(object);
+        if(object instanceof User)
+            if(((User) object).getNetworks() == null)
+                System.out.println("Networks after constructor is NULL!!!");
 
         entityManager.persist(instance);
         entityManager.getTransaction().commit();

@@ -36,8 +36,13 @@ public class UserController {
         ]
 
          */
+        if(user.getNetworks() == null)
+            System.out.println("Networks is null when get from JSON!!!");
+        User us = DataBase.persistObject(user);
+        if(us.getNetworks() == null)
+            System.out.println("Networks is null after persistobject!!!");
 
-        return ResponseEntity.ok(DataBase.persistObject(user));
+        return ResponseEntity.ok(us);
     }
 
     @PostMapping(value = "/find")
