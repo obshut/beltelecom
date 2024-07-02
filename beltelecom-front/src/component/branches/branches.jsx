@@ -20,7 +20,7 @@ const Branches = () => {
             setFilteredFiliali(response.data.filiali);
             setError(null);
         } catch (error) {
-            setError(error); // Устанавливаем ошибку в состояние
+            setError(error);
         }
     }
 
@@ -44,9 +44,11 @@ const Branches = () => {
             {error ? (
                     <Error error={error} />
                 ) : (
-            <><div className={"container__first"}>
-                        <button onClick={getService} className={"button button__branches"}>Получить данные</button>
-                    </div><table className={"table__oblasti"}>
+                <>
+                <div className={"container__first"}>
+                    <button onClick={getService} className={"button button__branches"}>Получить все филиалы</button>
+                </div>
+                    <table className={"table__oblasti"}>
                             <tbody>
                                 <tr className={"oblasti"}>
                                     {regions.map(region => (
@@ -77,7 +79,8 @@ const Branches = () => {
                                     </tr>
                                 ))}
                             </tbody>
-                        </table></>
+                        </table>
+            </>
              )}
         </div>
     );
