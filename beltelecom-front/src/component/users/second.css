@@ -54,6 +54,8 @@
 }
 
 .Info{
+    height: 93px;
+    overflow: hidden;
     margin-top: 10px;
     width: 90%;
     text-align: center;
@@ -63,4 +65,12 @@
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
+}
+
+.User__photo{
+    width: 130px;
+    border-radius: 50%;
+    height: 130px;
+    margin-top: 10px;
+    text-align: center;
 }
