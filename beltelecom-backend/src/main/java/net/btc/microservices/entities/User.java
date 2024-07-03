@@ -37,6 +37,13 @@ public class User {
         this.id = user.id;
         this.name = user.name;
         this.description = user.description;
+
+        if(user.networks == null)
+            System.out.println("Networks is not null");
+            
+        else
+            System.out.println("Network is null");
+
         this.networks = new ArrayList<>(user.networks);
     }
 

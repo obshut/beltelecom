@@ -7,27 +7,23 @@ import net.btc.microservices.entities.Filial;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/filials")
 public class FilialController {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
     @PostMapping
     @ResponseBody
-    public ResponseEntity<Filial> postFilial(@RequestBody Filial filial) {
-        DataBase.persistObject(entityManager, filial);
-
-        return ResponseEntity.ok(filial);
+    public ResponseEntity<Filial> postFilial(@RequestBody Filial filial) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        return ResponseEntity.ok(DataBase.persistObject(filial));
     }
 
     @PostMapping(value = "/find")
     @ResponseBody
     public ResponseEntity<List<Filial>> findFilial(@RequestBody Filial filial) {
-        List<Filial> filials = (List<Filial>)DataBase.getObjectQueryResult(entityManager, filial);
+        List<Filial> filials = (List<Filial>)DataBase.getObjectQueryResult(filial);
 
         return ResponseEntity.ok(filials);
     }
