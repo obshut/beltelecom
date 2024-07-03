@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,12 +17,9 @@ import java.util.List;
 @RequestMapping(value = "/users")
 public class UserController {
 
-    @PersistenceContext
-    EntityManager entityManager;
-
     @PostMapping
     @ResponseBody
-    public User postUser(@RequestBody User user) {
+    public ResponseEntity<User> postUser(@RequestBody User user) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         /*
         Input for networks must be like:
         "networks": [
@@ -38,16 +36,23 @@ public class UserController {
         ]
 
          */
-
-        DataBase.persistObject(entityManager, user);
-
-        return user;
+        System.out.println(user.getId());
+        System.out.println(user.getDescription());
+        System.out.println(user.getName());
+        System.out.println(user.getPhoto());
+        System.out.println(user.getNetworks());
+        if(user.getNetworks() == null)
+            System.out.println("Networks is null when get from JSON!!!");
+        User us = DataBase.persistObject(user);
+        if(us.getNetworks() == null)
+            System.out.println("Networks is null after persistobject!!!");
+        return ResponseEntity.ok(us);
     }
 
     @PostMapping(value = "/find")
     @ResponseBody
     public ResponseEntity<List<User>> findUser(@RequestBody User User) {
-        List<User> users = (List<User>) DataBase.getObjectQueryResult(entityManager, User);
+        List<User> users = (List<User>) DataBase.getObjectQueryResult(User);
 
         return ResponseEntity.ok(users);
     }

@@ -8,30 +8,26 @@ import net.btc.microservices.entities.Tariff;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/tariffs")
 public class TariffController {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
     @PostMapping
     @ResponseBody
-    public ResponseEntity<Tariff> postTariff(@RequestBody Tariff tariff) {
-        DataBase.persistObject(entityManager, tariff);
-
-        return ResponseEntity.ok(tariff);
+    public ResponseEntity<Tariff> postTariff(@RequestBody Tariff tariff) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        return ResponseEntity.ok(DataBase.persistObject(tariff));
     }
 
     @PostMapping(value = "/find")
     @ResponseBody
     public ResponseEntity<List<Tariff>> findTariff(@RequestBody Tariff tariff, HttpServletRequest request) {
-        List<Tariff> tariffs = (List<Tariff>) DataBase.getObjectQueryResult(entityManager, tariff);
+        List<Tariff> tariffs = (List<Tariff>) DataBase.getObjectQueryResult(tariff);
 
         //TODO: should implement general entrance point (probably make counter inside DataBase class)
-        System.out.println(request.getLocalPort());
+        //System.out.println(request.getLocalPort());
 
         return ResponseEntity.ok(tariffs);
     }
