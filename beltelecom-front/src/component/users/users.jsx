@@ -9,36 +9,21 @@ import Twitter from "../../img/twitter.png";
 
 const Users = () => {
 
-    const [user, setUser] = useState([]);
+    const [users, setUser] = useState([]);
     const [error, setError] = useState(null);
 
 
     const getUsers = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/Users2.json');
-            // http://localhost:3000/Users.json   localhost:8080/users
-            setUser(response.data.users);
-            setError(null);
-        } catch (error) {
-            setError(error);
-        }
-    }
-
-    const setUsers = async () => {
-        try {
-            const response = await axios.post('http://10.247.16.47:8081/api/tariffs/find', {
-                photo: "photo",
-                id: "",
-                name: "name",
-                description: "desc",
-                net1: ["url20"]
+            const response = await axios.post('http://10.247.16.47:8081/api/users/find', {
               }, {
                 headers: {
                   'Content-Type': 'application/json'
                 }
             });
+            // const response = await axios.get('http://10.247.16.47:8081/api/users/find')
             // localhost:8080/tariffs    http://localhost:3000/Ex.json
-            setUser(response.data.rates);
+            setUser(response.data);
             setError(null);
         } catch (error) {
             setError(error);
@@ -55,7 +40,7 @@ const Users = () => {
                 <button className={"button button__user"} onClick={getUsers}>Получить данные</button>
 
             <div className={"User"}>            
-                {user.map(user => (
+                {users.map(user => (
                         <div key={user.id} className="User__card">
                             <img className="User__photo" src={user.photo} alt={user.name} />
                             <h3 className={"Name"}>{user.name}</h3>
