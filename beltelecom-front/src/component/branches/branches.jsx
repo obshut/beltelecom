@@ -14,10 +14,15 @@ const Branches = () => {
 
     const getService = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/Bran.json');
+            const response = await axios.post('http://10.247.16.47:8081/api/filials/find', {
+            }, {
+              headers: {
+                'Content-Type': 'application/json'
+              }
+          });
             //  http://localhost:3000/Bran.json   localhost:8080/filials
-            setFiliali(response.data.filiali);
-            setFilteredFiliali(response.data.filiali);
+            setFiliali(response.data);
+            setFilteredFiliali(response.data);
             setError(null);
         } catch (error) {
             setError(error);
@@ -36,7 +41,8 @@ const Branches = () => {
         { id: 4, name: "Гомельская обл.", location: "loc4"},
         { id: 5, name: "Могилевская обл.", location: "loc5"},
         { id: 6, name: "Брестская обл.", location: "loc6"},
-        { id: 7, name: "Витебская обл.", location: "loc7"}
+        { id: 7, name: "Витебская обл.", location: "loc7"},
+        { id: 8, name: "Вашингон", location: "loc10"}
     ];
 
     return (

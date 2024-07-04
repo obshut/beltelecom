@@ -22,6 +22,7 @@ const Users = () => {
                 }
             });
             // const response = await axios.get('http://10.247.16.47:8081/api/users/find')
+            // console.log(response.data.userse);
             // localhost:8080/tariffs    http://localhost:3000/Ex.json
             setUser(response.data);
             setError(null);
